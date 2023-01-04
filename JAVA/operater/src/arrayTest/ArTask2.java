@@ -54,6 +54,7 @@ public class ArTask2 {
 //			마이페이지
 			if(arBtn[2].indexOf(btn) == 0 && count == 2) {
 				System.out.printf(sccuees[2]+"\n",name,age);
+				count = 0;
 			}else if(count == 1) {
 				System.out.println("로그인을 하셔야합니다");
 			}

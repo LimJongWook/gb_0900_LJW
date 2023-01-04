@@ -142,6 +142,19 @@ public class MethodTask {
 		result[0] = max;
 		result[1] = min;
 	}
+	 
+//	 indexOf() 만들기
+//	 문자를 입력받은 뒤 해당 문자가 몇 번째 인덱스에 있는 지 검사하고
+//	 만약 해당 문자가 없으면 -1을 리턴한다
+	 int indexOf(String str, char c) {
+		 for (int i = 0; i < str.length(); i++) {
+			if(str.charAt(i) == c){
+				return i;
+			}
+		}
+		 return -1;
+	 }
+	 
 //-------------------------------------------------------------------
 //	 강사님 풀이
 //   1~10까지 println()으로 출력하는 메소드
@@ -172,7 +185,7 @@ public class MethodTask {
    }
 
 //   두 정수의 나눗셈 후 몫과 나머지 두 개를 구하는 메소드
-   int[] div(int number1, int number2) {
+   int[] div2(int number1, int number2) {
       int[] result = null;
 
       if (number2 != 0) {
@@ -253,6 +266,7 @@ public class MethodTask {
       return result;
    }
    
+   
 //   5개의 정수를 입력받고 최대값과 최소값을 구해주는 메소드(void)
    void getMaxAndMin(int[] arData, int[] result) {
       result[0] = arData[0];
@@ -263,7 +277,19 @@ public class MethodTask {
          if(result[1] > arData[i]) {result[1] = arData[i];} 
       }
    }
-	 
+   
+//	 indexOf() 만들기
+//	 문자를 입력받은 뒤 해당 문자가 몇 번째 인덱스에 있는 지 검사하고
+//	 만약 해당 문자가 없으면 -1을 리턴한다	
+    int indexOf1(String str, char c) {
+    	for (int i = 0; i < str.length(); i++) {
+			if(str.charAt(i) == c) {
+				return i;
+			}
+		}
+    	return -1;
+    }
+   
 	public static void main(String[] args) {
 		MethodTask mt = new MethodTask();
 		Scanner sc = new Scanner(System.in);
@@ -279,23 +305,29 @@ public class MethodTask {
 //			System.out.println("몫 : " + result[0]);
 //			System.out.println("나머지 : " + result[1]);
 //		}
+		
+//		-----------------------------------------------------------
+
 //		1~n까지의 합을 구해주는 메소드		
 //		System.out.println(mt.sum(10));
+//		-----------------------------------------------------------
 		
 //		홀수를 짝수로, 짝수를 홀수로 바꿔주는 메소드		
 //		System.out.println(mt.sniffling(3));
+//		-----------------------------------------------------------	
 		
 //		문자열을 입력받고 소문자는 대문자로, 대문자는 소문자로 바꿔주는 메소드		
 //		System.out.println(mt.upLowCasting("StrIng"));
+//		-----------------------------------------------------------
 		
 //		문자열을 입력받고 원하는 문자의 개수를 구해주는 메소드		
-		System.out.println(mt.stringCount("andibviaaarer",'a'));
+//		System.out.println(mt.stringCount("andibviaaarer",'a'));
 		
+//		-----------------------------------------------------------		
 //		한글을 정수로 바꿔주는 메소드(1024 -> 일공이사)
 //		System.out.println(mt.strChangeNumber("1024"));
 
-
-		
+//		-----------------------------------------------------------
 		
 //	5개의 정수를 입력받고 최대값과 최소값을 구해주는 메소드
 //		int[] arDatas = new int[5];
@@ -310,6 +342,12 @@ public class MethodTask {
 //		mt.maxMin(arDatas, result);
 //		System.out.println("최대값 :" +result[0]);
 //		System.out.println("최소값 :" +result[1]);
+//		-----------------------------------------------------------
+//		 indexOf() 만들기
+//		 문자를 입력받은 뒤 해당 문자가 몇 번째 인덱스에 있는 지 검사하고
+//		 만약 해당 문자가 없으면 -1을 리턴한다		
+//		int result = mt.indexOf("abcdefghijk", 'h');
+//		System.out.println(result);
 		
 	}
 }
