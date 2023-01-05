@@ -61,7 +61,7 @@ class SuperCar {
    }
 }
 
-public class ClassTask {
+public class ClassTask1 {
    public static void main(String[] args) {
       String message = "1.시동켜기\n2.시동끄기";
       Scanner sc = new Scanner(System.in);
