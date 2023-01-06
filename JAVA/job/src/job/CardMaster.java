@@ -10,7 +10,7 @@ import java.util.Scanner;
 // 패를 받을 시 추가 금액 설정
 // 같은 패가 나올 시 다음 판 두 배
 // 다이, 고 결정
-// 판돈: 1억
+// 판money: 1억
 // 연속 3회 승리 시 계급 상승
 
 public class CardMaster {
@@ -27,7 +27,7 @@ public class CardMaster {
       this.money = money;
    }
    
-//   판돈 및 추가 금액을 받는다.
+//   판money 및 추가 금액을 받는다.
    void deposit(int money) {
       this.money -= money;
    }
@@ -104,7 +104,12 @@ public class CardMaster {
             switch(result) {
             case -1: // 무승부
                while(result == -1) {
-                  money *= 2;
+//                  ************************************************
+                  me.deposit(money);
+                  computer.deposit(money);
+                  money *= 3;
+//                  ************************************************
+//                  money *= 2
                   System.out.println(money);
                   me.getMyDeck();
                   System.out.println("나의 패: " +decks[me.deck]);
@@ -114,7 +119,7 @@ public class CardMaster {
                      result = 0; 
                      System.out.println(status[result + 1]);
                      computer.money += money;
-                     me.money -= money - defaultMoney - depositMoney;
+//                     me.money -= money - (defaultMoney + depositMoney) * 2;
                      me.winCount = 0;
                      computer.winCount++;
                      break;
@@ -125,13 +130,13 @@ public class CardMaster {
                   switch(result) {
                   case 0: // 패배
                      computer.money += money;
-                     me.money -= money - defaultMoney - depositMoney;
+//                     me.money -= money - (defaultMoney + depositMoney) * 2;
                      me.winCount = 0;
                      computer.winCount++;
                      break;
                   case 1: // 승리
                      me.money += money;
-                     computer.money -= money - defaultMoney - depositMoney;
+//                     computer.money -= money - (defaultMoney + depositMoney) * 2;
                      me.winCount++;
                      computer.winCount = 0;
                      break;
@@ -140,14 +145,14 @@ public class CardMaster {
                break;
             case 0: // 패배
                computer.money += money;
-               me.money -= money - defaultMoney - depositMoney;
+               me.money -= money - (defaultMoney + depositMoney) * 2;
                me.winCount = 0;
                computer.winCount++;
                break;
             case 1: // 승리
                System.out.println(money);
                me.money += money;
-               computer.money -= money - defaultMoney - depositMoney;
+               computer.money -= money - (defaultMoney + depositMoney) * 2;
                me.winCount++;
                computer.winCount = 0;
                break;
@@ -158,6 +163,7 @@ public class CardMaster {
             if(computer.winCount > 2 && computer.level < 3) {
                computer.level++;
             }
+            money = 0;
             break;
          case 2: // 나의 정보
             break;

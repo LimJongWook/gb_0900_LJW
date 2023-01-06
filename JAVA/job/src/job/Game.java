@@ -13,8 +13,9 @@ class PrimitiveMan {
 //	생명력 
 	int restCount;
 	
+//	기본 생성자
 	public PrimitiveMan() {;}
-
+//	생성자
 	public PrimitiveMan(String identity, int restCount) {
 		this.identity = identity;
 		this.restCount = restCount;
@@ -22,7 +23,9 @@ class PrimitiveMan {
 	
 //	채집
 	boolean faming() {
+		// 채집량이 5보다 클 때 false;
 		if(count < 5) {
+			//채집량이 5보다 작으면 채집량 +1 , true 리턴 
 			count++;
 			return true;
 		}
@@ -31,7 +34,9 @@ class PrimitiveMan {
 	
 //	사냥
 	boolean hunting() {
+		// 사냥성공횟수가 10보다 클 때 false;
 		if(count < 10) {
+			//사냥성공횟수가 10보다 작을 때 사냥성공횟수 1회 증가 
 			count++;
 			return true;
 		}
@@ -102,15 +107,18 @@ public class Game {
 		
 		String errMsg = "다시 입력해주세요", famingMsg = "";
 		int choice = 0, data = 0;
+		// flag변수로 종료시 다 종료
 		boolean check = false, flag = false;
-
+		
+		// 반복문 시작
 		while(true) {
 			System.out.println(menus[0]);
 			choice = sc.nextInt();
 //			종족선택 (원숭이)
 			if(choice == 1) {
 				
-				System.out.println(pm[0].identity + "입니다. -우끼끼-");				
+				System.out.println(pm[0].identity + "입니다. -우끼끼-");	
+				
 				while(true) {
 					
 					System.out.println(menus[1]);
