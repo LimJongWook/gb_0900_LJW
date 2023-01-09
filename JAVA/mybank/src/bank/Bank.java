@@ -6,7 +6,11 @@ public class Bank {
 	private String account;
 	private String phoneNumber;
 	private String password;
+	private String bankName;
 	private int money;
+	
+
+	
 	
 	public Bank() {;}
 
@@ -50,6 +54,13 @@ public class Bank {
 		this.money = money;
 	}
 	
+	public String getBankName() {
+		return bankName;
+	}
+	
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
+	}
 //	입금
 	public void deposit(int money) {
 		this.money += money;
@@ -107,16 +118,20 @@ public class Bank {
 		}
 		return null;
 	}
+	
+	// 은행 확인
+	public static Bank bankCheck(Bank[][] arrBank, int[] arCount, String account, String password, String bankName) {
+		Bank user = checkAccount(arrBank, arCount, account);
+		if(user != null) {
+			if(user.getPassword().equals(password)) {
+				if(user.getBankName().equals(bankName)) {
+					return user;
+				}
+			}
+		}
+		return null;
+	}
+	
+	
 }
-
-
-
-
-
-
-
-
-
-
-
 
