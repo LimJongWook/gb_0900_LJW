@@ -1,4 +1,4 @@
-package lamdbaTest;
+package lambdaTest;
 
 public class LamdbaTest {
 	public static void main(String[] args) {

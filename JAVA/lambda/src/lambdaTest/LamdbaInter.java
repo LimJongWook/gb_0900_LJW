@@ -1,4 +1,4 @@
-package lamdbaTest;
+package lambdaTest;
 
 @FunctionalInterface
 public interface LamdbaInter {

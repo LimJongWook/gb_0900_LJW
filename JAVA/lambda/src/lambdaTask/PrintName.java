@@ -1,4 +1,4 @@
-package lamdbaTask;
+package lambdaTask;
 
 @FunctionalInterface
 public interface PrintName {
