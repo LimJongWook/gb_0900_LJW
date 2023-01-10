@@ -4,7 +4,7 @@ lib/
 JAVA/.matadata/
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-.md
+*.md
 
 # Package Files #
 *.jar
