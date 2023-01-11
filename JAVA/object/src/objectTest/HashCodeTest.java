@@ -13,7 +13,7 @@ public class HashCodeTest {
 //		System.out.println(data1.toString());
 //		System.out.println(data2.toString());
 		
-		System.out.println(data1.hashCode());x`
+		System.out.println(data1.hashCode());
 		System.out.println(data2.hashCode());
 	}
 }
