@@ -1,4 +1,4 @@
-package collectionTask;
+package mycollectionTask;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,16 +11,17 @@ import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
 
 public class UserField {
-	public static ArrayList<User> users = DBConnecter.users;
+	public ArrayList<User> users = DBConnecter.users;
+	// 암호화 시 쓸 KEY
 	final static int KEY = 99;
 //	아이디 중복검사
-	public boolean idCheck(String id) {
+	public User idCheck(String id) {
 		for (int i = 0; i < users.size(); i++) {
 			if(users.get(i).getId().equals(id)) {
-				return true;
+				return users.get(i);
 			}
 		}
-		return false;
+		return null;
 	}
 // 	회원가입
 	public void sign(String name, String id, String password, String phoneNumber) {
@@ -151,6 +152,16 @@ public class UserField {
 	public boolean phoneNumberCheck(String phoneNumber) {
 		for (int i = 0; i < users.size(); i++) {
 			if(users.get(i).getPhoneNumber().equals(phoneNumber)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+//	해당되는 아이디의 핸드폰번호와 같은지 검사하는 메소드
+	public boolean phoneNumberCheck(String phoneNumber,String id) {
+		for (int i = 0; i < users.size(); i++) {
+			if(users.get(i).getPhoneNumber().equals(phoneNumber) && users.get(i).getId().equals(id)) {
 				return true;
 			}
 		}

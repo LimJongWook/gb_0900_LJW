@@ -1,4 +1,4 @@
-package collectionTask;
+package mycollectionTask;
 
 public class User {
 	private String name;
