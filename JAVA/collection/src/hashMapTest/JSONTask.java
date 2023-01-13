@@ -13,7 +13,6 @@ public class JSONTask {
 		User user = new User(1, "hds1234", "1234", "ÇÑµ¿¼®", 20);
 		JSONObject userJSON = new JSONObject(user);
 		JSONObject infoJSON = new JSONObject();
-		JSONParser parser = new JSONParser();
 		
 		try {
 			infoJSON.put("info", userJSON);
